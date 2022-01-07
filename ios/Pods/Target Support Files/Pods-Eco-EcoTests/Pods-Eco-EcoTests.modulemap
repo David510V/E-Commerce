@@ -1,0 +1,6 @@
+module Pods_Eco_EcoTests {
+  umbrella header "Pods-Eco-EcoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

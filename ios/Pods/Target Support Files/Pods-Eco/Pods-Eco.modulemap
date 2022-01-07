@@ -1,0 +1,6 @@
+module Pods_Eco {
+  umbrella header "Pods-Eco-umbrella.h"
+
+  export *
+  module * { export * }
+}
