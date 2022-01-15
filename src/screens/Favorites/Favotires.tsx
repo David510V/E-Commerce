@@ -1,0 +1,8 @@
+import React from "react";
+import { Text } from "react-native";
+import { styles } from "./styles";
+const FavoriesScreen = () => {
+  return <Text style={styles.text}>FavoriesScreen</Text>;
+};
+
+export default FavoriesScreen;

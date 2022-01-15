@@ -2,7 +2,7 @@ module.exports = {
     'env': {
         'es6': true,
         'node': true,
-        'jest':true
+        'jest':false
     },
     'extends': [
         'eslint:recommended',
@@ -28,7 +28,7 @@ module.exports = {
             'error',
             'unix'
         ],
-        "quotes": ['error', 'single', { avoidEscape: true }],
+        "quotes": ['error', 'single', { avoidEscape: false }],
         'semi': [
             'error',
             'always'
