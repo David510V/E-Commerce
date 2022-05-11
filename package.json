@@ -68,5 +68,10 @@
     "./src/**": [
       "prettier --write ."
     ]
+  },
+  "rnpm": {
+    "assets": [
+      ".src/assests/fonts/"
+    ]
   }
 }
