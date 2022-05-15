@@ -1,28 +1,40 @@
-import React from 'react';
+import React from "react";
 import { View } from "react-native";
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from '../screens/Home/Home';
-import CategoriesScreen from '../screens/Shop/Shop';
-import FavoritesScreen from '../screens/Favorites/Favotires';
-import ProfileScreen from '../screens/Profile/Profile';
-import BagScreen from '../screens/Bag/Bag';
-import ShopScreen from '../screens/Shop/Shop';
+import HomeScreen from "../screens/Home/Home";
+import CategoriesScreen from "../screens/Shop/Shop";
+import FavoritesScreen from "../screens/Favorites/Favotires";
+import ProfileScreen from "../screens/Profile/Profile";
+import BagScreen from "../screens/Bag/Bag";
+import ShopScreen from "../screens/Shop/Shop";
 
-import { HomeIcon } from '../assets/svgs/HomeIcon';
-import { ShopIcon } from '../assets/svgs/ShopIcon';
-import { BagIcon } from '../assets/svgs/BagIcon';
-import { FavoritesIcon } from '../assets/svgs/FavoritesIcon';
-import { ProfileIcon } from '../assets/svgs/ProfileIcon';
+import { HomeIcon } from "../assets/svgs/HomeIcon";
+import { ShopIcon } from "../assets/svgs/ShopIcon";
+import { BagIcon } from "../assets/svgs/BagIcon";
+import { FavoritesIcon } from "../assets/svgs/FavoritesIcon";
+import { ProfileIcon } from "../assets/svgs/ProfileIcon";
 
 const Tab = createBottomTabNavigator();
+
+const config = {
+  animation: "spring",
+  config: {
+    stiffness: 1000,
+    damping: 50,
+    mass: 3,
+    overshootClamping: false,
+    restDisplacementThreshold: 0.01,
+  },
+};
 const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        screenOptions={({ }) => ({
+        screenOptions={() => ({
+          unmountOnBlur: true,
           tabBarActiveTintColor: "#DB3022",
           tabBarInactiveTintColor: "#9B9B9B",
         })}
@@ -31,7 +43,8 @@ const AppNavigator = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarIcon: ({focused }) => (
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
               <View>
                 <View>
                   <HomeIcon
@@ -49,13 +62,13 @@ const AppNavigator = () => {
           name="Shop"
           component={ShopScreen}
           options={{
-            tabBarIcon: ({focused }) => (
+            tabBarIcon: ({ focused }) => (
               <View>
                 <View>
                   <ShopIcon
                     height={24}
                     width={24}
-                    focused = {focused}
+                    focused={focused}
                     color={focused ? "#DB3022" : "#9B9B9B"}
                   />
                 </View>
@@ -63,11 +76,11 @@ const AppNavigator = () => {
             ),
           }}
         />
-         <Tab.Screen
+        <Tab.Screen
           name="Bag"
           component={BagScreen}
           options={{
-            tabBarIcon: ({focused }) => (
+            tabBarIcon: ({ focused }) => (
               <View>
                 <View>
                   <BagIcon
@@ -81,11 +94,11 @@ const AppNavigator = () => {
             ),
           }}
         />
-         <Tab.Screen
+        <Tab.Screen
           name="Favorites"
           component={FavoritesScreen}
           options={{
-            tabBarIcon: ({focused }) => (
+            tabBarIcon: ({ focused }) => (
               <View>
                 <View>
                   <FavoritesIcon
@@ -98,11 +111,11 @@ const AppNavigator = () => {
             ),
           }}
         />
-         <Tab.Screen
+        <Tab.Screen
           name="Profile"
           component={ProfileScreen}
           options={{
-            tabBarIcon: ({focused }) => (
+            tabBarIcon: ({ focused }) => (
               <View>
                 <View>
                   <ProfileIcon
